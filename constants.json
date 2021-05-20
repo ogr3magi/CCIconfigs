@@ -1,0 +1,61 @@
+{
+  "conditions": {
+    "3 Axis Location": {
+      "conditions": [
+        {
+          "value1": "-5",
+          "value2": "5",
+          "variableName": "dirX",
+          "roundNumber": true,
+          "type": "randomNumber",
+          "displayName": "dirX"
+        },
+        {
+          "value1": "1",
+          "value2": "5",
+          "variableName": "dirY",
+          "roundNumber": true,
+          "type": "randomNumber",
+          "displayName": "dirY"
+        },
+        {
+          "value1": "-5",
+          "value2": "5",
+          "variableName": "dirZ",
+          "roundNumber": true,
+          "type": "randomNumber",
+          "displayName": "dirZ"
+        }
+      ],
+      "type": "multiple"
+    },
+    "Boop Values": {
+      "conditions": [
+        {
+          "value1": "-1",
+          "value2": "1",
+          "variableName": "StrX",
+          "type": "randomNumber",
+          "displayName": "StrX"
+        },
+        {
+          "value1": "1",
+          "value2": "1",
+          "variableName": "StrY",
+          "type": "randomNumber",
+          "displayName": "StrY"
+        },
+        {
+          "value1": "-1",
+          "value2": "1",
+          "variableName": "StrZ",
+          "type": "randomNumber",
+          "displayName": "StrZ"
+        }
+      ],
+      "type": "multiple"
+    }
+  },
+  "outcomes": {},
+  "events": {}
+}

@@ -1,0 +1,258 @@
+{
+  "configs": [
+    {
+      "types": {
+        "message": [
+          {
+            "name": "Bot Filter",
+            "conditions": [
+              {
+                "username": "PretzelRocks",
+                "type": "user",
+                "displayName": "Pretzel"
+              },
+              {
+                "username": "Ogr3Mech",
+                "type": "user",
+                "displayName": "Ogr3Mech"
+              },
+              {
+                "phrase": "§",
+                "type": "message",
+                "displayName": "CrashCharacter"
+              },
+              {
+                "username": "Nightbot",
+                "type": "user",
+                "displayName": "Nightbot"
+              }
+            ],
+            "outcomes": [
+              {
+                "type": "null"
+              }
+            ],
+            "triggersFromAnyConditionMet": true
+          },
+          {
+            "name": "Chat Message",
+            "conditions": [
+              {
+                "variableName": "message",
+                "variableResult": "editedMessage",
+                "type": "jsonSafe"
+              }
+            ],
+            "outcomes": [
+              {
+                "command": "/tellraw $playerName [\"\",{\"text\":\"$display-name: $editedMessage\",\"color\":\"green\"}]",
+                "executeAsSelf": true,
+                "type": "command"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          },
+          {
+            "name": "Boop",
+            "conditions": [
+              {
+                "phrase": "boop",
+                "type": "message"
+              },
+              {
+                "name": "Boop Values",
+                "type": "constant"
+              }
+            ],
+            "outcomes": [
+              {
+                "message": "boop",
+                "interrupts": true,
+                "type": "narrator"
+              },
+              {
+                "target": "$playerName",
+                "amount": "$StrX",
+                "axis": "x",
+                "relative": true,
+                "doOnPlayer": true,
+                "type": "motion",
+                "displayName": "LaunchX"
+              },
+              {
+                "target": "$playerName",
+                "amount": "$StrY",
+                "axis": "y",
+                "relative": true,
+                "doOnPlayer": true,
+                "type": "motion",
+                "displayName": "LaunchY"
+              },
+              {
+                "target": "$playerName",
+                "amount": "$StrZ",
+                "axis": "z",
+                "relative": true,
+                "doOnPlayer": true,
+                "type": "motion",
+                "displayName": "LaunchZ"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          },
+          {
+            "name": "Spawn",
+            "conditions": [
+              {
+                "exactPhrase": true,
+                "phrase": "!Spawn",
+                "type": "message"
+              },
+              {
+                "username": "ogr3magi",
+                "type": "user"
+              }
+            ],
+            "outcomes": [
+              {
+                "times": "250",
+                "outcome": {
+                  "command": "/summon zombie ~ ~1 ~",
+                  "executeAsSelf": true,
+                  "type": "command"
+                },
+                "type": "repeat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true,
+            "playTime": 100
+          },
+          {
+            "name": "Bright",
+            "conditions": [
+              {
+                "phrase": "!bright",
+                "type": "message"
+              }
+            ],
+            "outcomes": [
+              {
+                "command": "/effect give $playerName night_vision 300 0 true",
+                "executeAsSelf": true,
+                "type": "command"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true,
+            "cooldown": "300"
+          },
+          {
+            "name": "Bobo's Command",
+            "conditions": [
+              {
+                "username": "bodoc22",
+                "type": "user"
+              },
+              {
+                "phrase": "stick",
+                "type": "message"
+              }
+            ],
+            "outcomes": [
+              {
+                "outcomes": [
+                  {
+                    "command": "/title @a subtitle {\"text\":\"says Bobo\",\"bold\":true,\"color\":\"red\"}",
+                    "executeAsSelf": true,
+                    "type": "command",
+                    "displayName": "Subtitle"
+                  },
+                  {
+                    "command": "/title @a title {\"text\":\"Arko Sucks!\",\"bold\":true,\"color\":\"red\"}",
+                    "executeAsSelf": true,
+                    "type": "command",
+                    "displayName": "Title"
+                  }
+                ],
+                "type": "multiple"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true,
+            "cooldown": "2400"
+          },
+          {
+            "name": "Reborn's Command",
+            "conditions": [
+              {
+                "phrase": "reborne",
+                "type": "message"
+              }
+            ],
+            "outcomes": [
+              {
+                "target": "@a",
+                "amount": "200",
+                "type": "health"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true,
+            "cooldown": "1200"
+          }
+        ],
+        "action": [
+          {
+            "name": "Bot Filter",
+            "disabled": true,
+            "conditions": [
+              {
+                "username": "PretzelRocks",
+                "type": "user",
+                "displayName": "Pretzel"
+              },
+              {
+                "username": "Ogr3Mech",
+                "type": "user",
+                "displayName": "Ogr3Mech"
+              },
+              {
+                "phrase": "§",
+                "type": "message",
+                "displayName": "CrasherCharacter2"
+              },
+              {
+                "username": "Nightbot",
+                "type": "user",
+                "displayName": "Nightbot"
+              }
+            ],
+            "outcomes": [
+              {
+                "type": "null"
+              }
+            ],
+            "triggersFromAnyConditionMet": true
+          },
+          {
+            "name": "Emote Chat",
+            "conditions": [
+              {
+                "variableName": "message",
+                "variableResult": "editedMessage",
+                "type": "jsonSafe"
+              }
+            ],
+            "outcomes": [
+              {
+                "command": "/tellraw $playerName [\"\",{\"text\":\"* $display-name $editedMessage\",\"color\":\"gold\"}]",
+                "executeAsSelf": true,
+                "type": "command",
+                "displayName": "Chat"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "init": [],
+  "type": "chat"
+}
